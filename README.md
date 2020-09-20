@@ -23,8 +23,8 @@ plt.xlabel('Hours Studied')
 plt.ylabel('Percentage Score')  
 plt.show()
 
-X = s_data.iloc[:, :-1].values  
-y = s_data.iloc[:, 1].values  
+X = student_data.iloc[:, :-1].values  
+y = student_data.iloc[:, 1].values  
 
 from sklearn.model_selection import train_test_split  
 X_train, X_test, y_train, y_test = train_test_split(X, y, 
@@ -51,7 +51,7 @@ y_pred = regressor.predict(X_test) # Predicting the scores
 df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})  
 df 
 
-# You can also test with your own data
+# we can also test with your own data
 from sklearn import metrics  
 print('Mean Absolute Error:', 
       metrics.mean_absolute_error(y_test, y_pred))
